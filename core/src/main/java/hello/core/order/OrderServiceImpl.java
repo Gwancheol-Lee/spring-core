@@ -1,7 +1,6 @@
 package hello.core.order;
 
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
@@ -9,7 +8,7 @@ import hello.core.member.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 	
 	private final MemberRepository memberRepository = new MemoryMemberRepository();
-	private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+	private DiscountPolicy discountPolicy; // 인터페이스에만 의존하도록 변경
 	
 	// 구현체 클래스인 OrderServiceImpl에서 추상화 클래스인 OrderService의 추상적으로 선언된 createOrder 메소드를 실제 구현한다.
 	@Override
