@@ -13,7 +13,7 @@ class RateDiscountPolicyTest {
 	RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 	
 	@Test
-	@DisplayName("VIP는 10% 할인 적용되어야 한다") // DisplayName = vip_o를 해당 문자열로 보여줌
+	@DisplayName("VIP는 10% 할인 적용되어야 한다") // DisplayName = vip_o를 해당 문자열로 보여줌 
 	void vip_o() {
 		//given
 		Member member = new Member(1L, "memberVIP", Grade.VIP);
