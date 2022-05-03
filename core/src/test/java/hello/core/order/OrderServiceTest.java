@@ -1,17 +1,26 @@
 package hello.core.order;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import hello.core.AppConfig;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
-import hello.core.member.MemberServiceImpl;
 
 public class OrderServiceTest {
 
-	MemberService memberService = new MemberServiceImpl();
-	OrderService orderService = new OrderServiceImpl();
+	MemberService memberService;
+	OrderService orderService;
+	
+	// 테스트 어노테이션 전에 아래 메소드 우선 실행시키는 어노테이션
+	@BeforeEach
+	public void beforeEach() {
+		AppConfig appConfig = new AppConfig();
+		memberService = appConfig.memberService();
+		orderService = appConfig.orderService();
+	}
 	
 	@Test
 	void createOrder() {

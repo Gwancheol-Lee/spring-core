@@ -1,13 +1,23 @@
 package hello.core.member;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import hello.core.AppConfig;
 
 // JUNIT Framework 테스트
 public class MemberServiceTest {
 	
-	MemberService memberService = new MemberServiceImpl();
-
+	MemberService memberService;
+	
+	// 테스트 어노테이션 전에 아래 메소드 우선 실행시키는 어노테이션
+	@BeforeEach
+	public void beforeEach() {
+		AppConfig appConfig = new AppConfig();
+		memberService = appConfig.memberService();
+	}
+	
 	@Test
 	void join() {
 		//given
