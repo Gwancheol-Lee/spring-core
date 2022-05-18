@@ -10,6 +10,7 @@ import org.springframework.context.annotation.FilterType;
 		// 탐색할 패키지의 시작 위치를 지정한다. 지정하지 않으면 모든 패키지를 조회하기 때문에 필수로 지정해주어야 한다.
 		// 권장하는 방법은. 패키지 위치를 지정하지 않고, AppConfig 클래스를 프로젝트 최상단(hello.core)에 둔다.
 		/*
+		 
 		 @SpringBootApplication에 @ComponentScan 어노테이션이 있으며, 아래 어노테이션을 포함하여 스캔.
 		 
 		  @Component: 컴포넌트 스캔에서 사용, 
